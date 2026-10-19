@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { useTheme } from '../context/ThemeContext';
 import { FaHome, FaPlus, FaSearch, FaBox, FaSignOutAlt, FaSun, FaMoon } from 'react-icons/fa';
-
+import { FaRobot } from 'react-icons/fa';
 const Sidebar = ({ isOpen, toggleSidebar }) => {
     const { user, logout } = useAuth();
     const { theme, toggleTheme } = useTheme();
@@ -65,6 +65,13 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
                             <FaPlus /> Add Officer
                         </Link>
                     )}
+
+                    <Link
+                        to="/chatbot"
+                        className={`nav-link ${isActive('/chatbot') ? 'active' : ''}`}
+                    >
+                        <FaRobot /> AI Assistant
+                    </Link>
                 </nav>
 
                 <div style={{ borderTop: '1px solid var(--glass-border)', paddingTop: '1rem' }}>

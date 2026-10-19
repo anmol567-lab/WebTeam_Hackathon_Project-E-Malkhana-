@@ -12,7 +12,7 @@ connectDB();
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors(origin='*'));
 app.use(express.json());
 
 // Routes
@@ -21,7 +21,7 @@ app.use('/api/dashboard', require('./routes/dashboard'));
 app.use('/api/cases', require('./routes/cases'));
 app.use('/api/custody', require('./routes/custody'));
 app.use('/api/disposal', require('./routes/disposal'));
-
+app.use('/api/query', require('./routes/queryRoutes'));
 // Basic Route
 app.get('/', (req, res) => {
     res.send('e-Malkhana API is running');

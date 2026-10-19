@@ -55,6 +55,9 @@ const AddOfficer = () => {
                 stationName: '',
                 officerId: ''
             });
+            setTimeout(() => {
+                navigate('/');
+            }, 1000);; // Redirect to dashboard after successful registration
 
         } catch (err) {
             setError(err.message);

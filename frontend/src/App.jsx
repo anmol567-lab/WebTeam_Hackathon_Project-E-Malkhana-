@@ -14,7 +14,7 @@ import ProtectedRoute from './components/ProtectedRoute';
 import Layout from './components/Layout';
 
 import { ThemeProvider } from './context/ThemeContext';
-
+import Chatbot from "./pages/Chatbot";
 function App() {
   return (
     <ThemeProvider>
@@ -83,6 +83,16 @@ function App() {
               }
             />
             <Route
+              path="/chatbot"
+              element={
+                <ProtectedRoute>
+                  <Layout>
+                    <Chatbot />
+                  </Layout>
+                </ProtectedRoute>
+              }
+            />
+            <Route
               path="/"
               element={
                 <ProtectedRoute>
@@ -92,6 +102,7 @@ function App() {
                 </ProtectedRoute>
               }
             />
+            
           </Routes>
         </Router>
       </AuthProvider>
